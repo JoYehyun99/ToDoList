@@ -1,0 +1,184 @@
+:root {
+    --background-color:#E1E2E1;
+    --page-color:#ffffff;
+    --text-color:#424242;
+    --deco-color:#ffebee;
+    --btn-color:#ccb9bc;
+    --checkedText-color:#696969;
+
+    --font-large:15px;
+    --font-medium:12px;
+    --font-small:10px;
+}
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+button,
+button:focus{
+    border:none;
+    cursor: pointer;
+    outline:none;
+
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.container{
+    width: 320px;
+    height:440px;
+    padding: 30px;
+    background-color: var(--page-color);
+    box-shadow: 0 4px 6px rgb(211, 211, 211), 0 1px 3px rgb(211, 211, 211);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dateInfo{
+    width: 100%;
+    height:45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    color:var(--text-color);
+}
+
+.date{
+    height: 100%;
+    display: flex;
+}
+
+.day{
+    font-size: 43px;
+    height: 100%;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 5px;
+    color:var(--btn-color);
+}
+
+.monthAndYear{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.monthAndYear .month{
+    font-weight: 400;
+}
+
+.monthAndYear .year{
+    font-weight: 300;
+}
+
+.dayOfWeek{
+    font-size: var(--font-large);
+    font-weight: 700;
+}
+
+
+.todoList{
+    width: 100%;
+    height: 290px;
+    overflow: auto;
+    margin-top: 20px;
+}
+.todoList::-webkit-scrollbar {
+    width: 7px;
+  }
+  .todoList::-webkit-scrollbar-thumb {
+    background-color: var(--btn-color);
+    border-radius: 10px;
+  }
+  .todoList::-webkit-scrollbar-track {
+    background-color: var(--page-color);
+    border-radius: 10px;
+  }
+
+.todoList li {
+    margin-bottom: 4px;
+    padding:7px;
+    font-size: 15px;
+    color:var(--text-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.forCheck{
+    display: flex;
+}
+
+/* checkbox input 숨김 처리 */
+.forCheck input{ 
+    display: none;
+}
+
+/* 새로운 checkbox 테두리 */
+
+.forCheck .check_icon {
+    display: inline-block;
+    position:relative;
+    border: 1px solid var(--btn-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin:0px 6px -3px -5px;
+
+}
+
+.forCheck .check_icon img{
+    display: none;
+}
+
+.check_text {
+    width: 200px;
+    word-break:break-all;
+}
+
+.forCheck input:checked + .check_icon{
+    background: var(--btn-color);
+}
+
+.forCheck input:checked + .check_icon > img{
+    display:block;
+    position: absolute;
+    left:3px;
+    top:3px;
+}
+
+.forCheck input:checked ~ .check_text {
+    text-decoration: line-through;
+    color:var(--checkedText-color);
+}
+
+.delete{
+    color:var(--btn-color);
+}
+
+#addBtn{
+    background-color: var(--btn-color);
+    color:var(--page-color);
+    border-radius: 50%;
+    margin-top: -30px;
+    padding:25px;
+    font-size: 22px;
+}
